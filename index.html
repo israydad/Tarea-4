@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicio">Servicio</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <section id="inicio" class="banner">
+        <img src="img/banner.jpg" alt="" class="imagen-banner">
+        <div class="contenido-banner">
+            <h1>Bienvenido</h1>
+            <p>Descubre nuevos Animes increíbles</p>
+        </div>
+    </section>
+    <section id="servicio" class="anime">
+        <h2 class="titulo">Últimos Capítulos</h2>
+        <div class="ultimos_capitulos">
+            <img src="img/anime 1.jpg" alt="capitulo1">
+            <img src="img/anime 2.jpg" alt="capitulo2">
+            <img src="img/anime 3.jpg" alt="capitulo3">
+            <img src="img/anime 4.jpg" alt="capitulo4">
+        </div>
+        <h2 class="titulo">Películas</h2>
+        <div class="peliculas-caja">
+            <div class="pelicula">
+                <img src="img/peli 1.jpg" alt="peli1">
+                <div class="info-peli">
+                    <h3>Nombre :v</h3>
+                    <p> otro we que enamora a todas a pesar de no ser nadie (podria ser cualquiera)</p>
+                </div>
+            </div>
+            <div class="pelicula">
+                <img src="img/peli 2.jpg" alt="peli2">
+                <div class="info-peli">
+                    <h3>Nombre :v</h3>
+                    <p> un wey que se muere y reencarna a otro munco (podria ser cualquiera)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="galeria"></section>
+    <h2 class="titulo">Animes de Temporada</h2>
+        <div class="ultimos_capitulos">
+            <img src="img/galeria 1.jpg" alt="galeria1">
+            <img src="img/galeria 2.jpg" alt="galeria2">
+            <img src="img/galeria 3.jpg" alt="galeria3">
+            <img src="img/galeria 4.jpg" alt="galeria4">
+        </div>
+    <section id="contacto" class="contacto-seccion">
+    <h2 class="titulo">Contacto</h2>
+    <div class="contenedor-contacto">
+        <form id="formulario-contacto" class="form-estilo">
+            <input type="text" id="nombre" placeholder="Nombre">
+            <input type="email" id="correo" placeholder="Correo electrónico" required>
+            <input type="text" id="direccion" placeholder="Dirección" required>
+            <input id="mensaje" placeholder="Tu mensaje" required></input>
+            <button type="submit" class="boton-enviar">Enviar Mensaje</button>
+        </form>
+
+        <div id="resultado-contacto" class="resultado-caja" style="display: none;">
+            <h3>Datos Recibidos:</h3>
+            <p><strong>Nombre:</strong> <span id="res-nombre"></span></p>
+            <p><strong>Correo:</strong> <span id="res-correo"></span></p>
+            <p><strong>Dirección:</strong> <span id="res-direccion"></span></p>
+            <p><strong>Mensaje:</strong> <span id="res-mensaje"></span></p>
+        </div>
+    </div>
+</section>
+<script>
+    const formulario = document.getElementById('formulario-contacto');
+    const resultado = document.getElementById('resultado-contacto');
+
+    formulario.addEventListener('submit', function(event) {
+        event.preventDefault();
+        document.getElementById('res-nombre').textContent = document.getElementById('nombre').value;
+        document.getElementById('res-correo').textContent = document.getElementById('correo').value;
+        document.getElementById('res-direccion').textContent = document.getElementById('direccion').value;
+        document.getElementById('res-mensaje').textContent = document.getElementById('mensaje').value;
+
+        resultado.style.display = 'block';
+
+        formulario.reset();
+    });
+</script>
+</body>
+</html>
